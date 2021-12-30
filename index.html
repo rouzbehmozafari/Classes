@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TITLE</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+</head>
+<body>
+<!-- HEADER -->
+    <header>
+    </header>
+<!-- MAIN -->
+    <main>
+        <form action="" onsubmit="return false">
+            <label for="">Name</label><input id="name" type="text">
+            <label for="">Age</label><input id="age" type="number">
+            <label for="">Passed the Exam?</label><input id="pass" type="checkbox">
+            <div class=""><button onclick="make()">Person</button></div>
+        </form>
+    </main>
+<!-- FOOTER -->
+    <footer>
+    </footer>
+<!-- SCRIPT -->
+    <script>
+    //   1
+    // class Ball{
+    //     constructor(ballType = 'regular'){
+    //         this.ballType = ballType
+    //     }
+    // }
+    // ball1 = new Ball()
+    // ball2 = new Ball('super')
+    // console.log(ball1.ballType)
+    // console.log(ball2.ballType)
+
+
+    
+    // 2
+    class Person{
+        constructor(name,age,pass){
+            this.name = name
+            this.age = age
+            this.pass = pass
+        }
+        info(){
+            return `My name is ${this.name} and i'm ${this.age} years old`
+        }
+        write(){
+            let p = document.createElement('p')
+            console.log(pass)
+            if (!this.pass){
+                p.setAttribute('style', 'color:red;')
+            }
+            p.innerText = (`My name is ${this.name} and i'm ${this.age} years old and ${this.pass ? 'passed ':'not passed'} the exam`)
+            document.querySelector('body').appendChild(p)
+        }
+    }
+    function make (){
+            let name = document.getElementById('name').value
+            let age = document.getElementById('age').value
+            let pass = document.getElementById('pass').checked
+            let np = new Person(name,age,pass)
+            np.write()
+    }
+    // let person1 = new Person()
+    // const Person1 = new Person('Rouz',31)
+    // console.log(Person1.info())
+
+
+
+    // 3
+    
+
+    </script>
+</body>
+</html>
